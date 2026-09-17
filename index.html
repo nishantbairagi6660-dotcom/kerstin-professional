@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kerstin Professional — luxury hair, beauty, bridal and spa experiences in Karnal." />
+  <title>Kerstin Professional | Luxury Salon & Beauty Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#211c1b; --cream:#f8f4ef; --warm:#eee4db; --rose:#b9827c;
+      --gold:#b99a6b; --white:#fff; --muted:#756d69; --line:#e5d9d0;
+      --shadow:0 20px 60px rgba(43,31,26,.10);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%;object-fit:cover}
+    .container{width:min(1180px,92%);margin:auto}
+    .topbar{background:var(--ink);color:#fff;text-align:center;padding:9px 15px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+    header{position:absolute;top:34px;left:0;width:100%;z-index:5;color:#fff}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+    .logo{font-family:"Cormorant Garamond",serif;font-size:31px;letter-spacing:.04em;font-weight:700}
+    .logo small{display:block;font-family:"DM Sans";font-size:8px;letter-spacing:.3em;text-align:center;margin-top:-5px}
+    .links{display:flex;gap:30px;align-items:center;font-size:13px}
+    .links a{opacity:.9}.links a:hover{opacity:1}
+    .nav-cta{padding:12px 20px;border:1px solid rgba(255,255,255,.6);border-radius:999px}
+    .hero{min-height:88vh;display:grid;place-items:center;position:relative;color:#fff;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,14,13,.72),rgba(20,14,13,.22)),url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2200&q=85") center/cover}
+    .hero-content{position:relative;z-index:1;width:min(1180px,92%);padding-top:100px}
+    .eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#e7d0c4;margin-bottom:18px}
+    h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:600;line-height:1.05}
+    h1{font-size:clamp(54px,8vw,104px);max-width:760px}
+    .hero p{max-width:560px;margin:25px 0 32px;color:#eee;font-size:17px}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap}
+    .btn{padding:14px 24px;border-radius:999px;font-weight:600;font-size:13px;display:inline-flex;align-items:center;justify-content:center}
+    .btn-primary{background:#fff;color:var(--ink)}
+    .btn-outline{border:1px solid rgba(255,255,255,.6);color:#fff}
+    .scroll{position:absolute;bottom:25px;right:4%;font-size:10px;letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl;opacity:.7}
+    section{padding:100px 0}
+    .intro{background:#fff}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+    .image-stack{position:relative;padding-right:70px}
+    .image-stack img:first-child{height:570px}
+    .image-stack img:last-child{position:absolute;right:0;bottom:-45px;width:48%;height:250px;border:10px solid #fff}
+    .kicker{font-size:11px;text-transform:uppercase;letter-spacing:.25em;color:var(--rose);font-weight:700;margin-bottom:14px}
+    h2{font-size:clamp(44px,5vw,66px);margin-bottom:20px}
+    .copy{color:var(--muted);max-width:570px}
+    .signature{font-family:"Cormorant Garamond";font-size:28px;margin-top:28px}
+    .services{background:var(--warm)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+    .section-head p{max-width:420px;color:var(--muted);font-size:14px}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{background:#fff;overflow:hidden;box-shadow:var(--shadow)}
+    .card img{height:250px;transition:transform .5s}.card:hover img{transform:scale(1.04)}
+    .card-body{padding:22px}
+    .card h3{font-size:30px;margin-bottom:7px}.card p{font-size:13px;color:var(--muted)}
+    .experience{background:#211c1b;color:#fff}
+    .experience .copy{color:#cfc6c1}
+    .experience .kicker{color:#d9b6a7}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#4a403d;margin-top:50px}
+    .stat{background:#211c1b;padding:30px}.stat strong{font-family:"Cormorant Garamond";font-size:48px;display:block}.stat span{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#bfb4af}
+    .packages{background:#fff}
+    .package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .package{border:1px solid var(--line);padding:32px;position:relative}
+    .package.featured{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .package .tag{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);font-weight:700}
+    .package h3{font-size:34px;margin:14px 0}.package p{color:var(--muted);font-size:13px;margin-bottom:18px}.featured p{color:#c8bfba}
+    .package ul{list-style:none;border-top:1px solid var(--line);padding-top:18px}.featured ul{border-color:#514844}
+    .package li{font-size:13px;padding:7px 0}.package li:before{content:"✦";margin-right:9px;color:var(--gold)}
+    .gallery{background:var(--cream)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:12px}
+    .gallery-grid img{height:100%;border-radius:2px}.gallery-grid img:nth-child(1){grid-row:span 2}.gallery-grid img:nth-child(4){grid-column:span 2}.gallery-grid img:nth-child(6){grid-column:span 2}
+    .reviews{background:#fff}
+    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .review{padding:30px;background:var(--cream)}.stars{letter-spacing:.15em;color:var(--gold);font-size:13px}.review p{font-family:"Cormorant Garamond";font-size:24px;line-height:1.3;margin:18px 0}.review small{color:var(--muted)}
+    .cta{padding:80px 0;background:linear-gradient(110deg,#d5b2a7,#eadbd4);text-align:center}.cta h2{font-size:58px;max-width:700px;margin:0 auto 20px}.cta p{max-width:550px;margin:0 auto 28px;color:#554946}
+    footer{background:var(--ink);color:#fff;padding:65px 0 25px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:50px}.footer-grid h3{font-size:30px;margin-bottom:12px}.footer-grid p,.footer-grid a{font-size:13px;color:#bdb4af}.footer-grid a{display:block;margin:7px 0}.bottom{border-top:1px solid #433b38;margin-top:45px;padding-top:20px;color:#8f8580;font-size:11px;display:flex;justify-content:space-between}
+    @media(max-width:850px){.links{display:none}.split{grid-template-columns:1fr;gap:55px}.image-stack{padding-right:35px}.service-grid{grid-template-columns:1fr 1fr}.package-grid,.review-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid img:nth-child(4),.gallery-grid img:nth-child(6){grid-column:span 1}.footer-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero{min-height:82vh}}
+    @media(max-width:520px){section{padding:70px 0}.service-grid{grid-template-columns:1fr}.gallery-grid{grid-auto-rows:170px}h1{font-size:54px}.cta h2{font-size:44px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">Karnal's Beauty • Hair • Makeup • Spa • Academy</div>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#top">KERSTIN <small>PROFESSIONAL</small></a>
+        <div class="links">
+          <a href="#services">Services</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a>
+          <a class="nav-cta" href="tel:+919289377777">Book Appointment</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Kunjpura Road • Karnal</div>
+        <h1>Beauty, elevated to an experience.</h1>
+        <p>Premium hair, skin, makeup, nails and spa experiences — crafted by professionals who understand that every client deserves to feel extraordinary.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="tel:+919289377777">Book an Appointment</a>
+          <a class="btn btn-outline" href="#services">Explore Services</a>
+        </div>
+      </div>
+      <div class="scroll">Scroll to explore</div>
+    </section>
+
+    <section class="intro" id="about">
+      <div class="container split">
+        <div class="image-stack">
+          <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85" alt="Luxury salon interior">
+          <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=85" alt="Beauty styling">
+        </div>
+        <div>
+          <div class="kicker">The Kerstin experience</div>
+          <h2>Where expertise meets effortless luxury.</h2>
+          <p class="copy">Kerstin Professional brings together hair artistry, beauty care, bridal makeup, nails, spa and professional training under one roof in Karnal. The focus is simple: personalized service, polished results and an experience worth returning for.</p>
+          <div class="signature">Kerstin Professional</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">What we do</div><h2>Signature services</h2></div>
+          <p>From a refined everyday look to your wedding-day transformation, choose an experience designed around you.</p>
+        </div>
+        <div class="service-grid">
+          <article class="card"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=85" alt="Hair styling"><div class="card-body"><h3>Hair</h3><p>Cutting, styling, colour, smoothing, spa and transformation services.</p></div></article>
+          <article class="card"><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=85" alt="Skin and facial treatment"><div class="card-body"><h3>Skin</h3><p>Facials, glow treatments, clean-ups and personalized skin care.</p></div></article>
+          <article class="card"><img src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=900&q=85" alt="Bridal makeup"><div class="card-body"><h3>Bridal</h3><p>Bridal, engagement, party and polished occasion makeup.</p></div></article>
+          <article class="card"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=85" alt="Nail care"><div class="card-body"><h3>Nails</h3><p>Manicure, pedicure, nail art and finishing details.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience">
+      <div class="container split">
+        <div><div class="kicker">More than a salon</div><h2>A place to look good. Feel good. Learn well.</h2><p class="copy">Kerstin Professional also brings beauty education into the same environment, helping aspiring artists build practical skills across hair, makeup, beauty and nails.</p></div>
+        <div><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85" alt="Elegant salon interior"></div>
+      </div>
+      <div class="container stats">
+        <div class="stat"><strong>16+</strong><span>Years of beauty experience</span></div>
+        <div class="stat"><strong>4.8★</strong><span>Google rating</span></div>
+        <div class="stat"><strong>1,300+</strong><span>Google reviews</span></div>
+      </div>
+    </section>
+
+    <section class="packages">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Curated experiences</div><h2>Popular occasions</h2></div><p>Choose a focused service or speak with the team about creating a personalized beauty plan.</p></div>
+        <div class="package-grid">
+          <article class="package featured"><div class="tag">Bridal</div><h3>Bridal Beauty</h3><p>A polished wedding-day look tailored to your style, outfit and photography.</p><ul><li>Bridal makeup</li><li>Hair styling</li><li>Draping & finishing</li><li>Trial consultation available</li></ul></article>
+          <article class="package"><div class="tag">Glow</div><h3>Pre-Bridal</h3><p>Build your skin and hair routine before the big day with professional care.</p><ul><li>Skin preparation</li><li>Hair spa</li><li>Body care</li><li>Personalized planning</li></ul></article>
+          <article class="package"><div class="tag">Relax</div><h3>Spa & Wellness</h3><p>Slow down and reset with soothing treatments designed for relaxation.</p><ul><li>Massage experiences</li><li>Body treatments</li><li>Hair spa</li><li>Beauty finishing</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">The look</div><h2>Inside Kerstin</h2></div><p>A visual preview of the premium atmosphere and beauty experience.</p></div>
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85" alt="Salon styling">
+          <img src="https://images.unsplash.com/photo-1527799820374-dcf8f1d3a3c2?auto=format&fit=crop&w=900&q=85" alt="Beauty salon">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85" alt="Facial treatment">
+          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1200&q=85" alt="Salon interior">
+          <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=900&q=85" alt="Nail care">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1200&q=85" alt="Hair grooming">
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Client love</div><h2>What clients say</h2></div><p>Public review platforms show strong customer feedback for Kerstin Professional in Karnal.</p></div>
+        <div class="review-grid">
+          <div class="review"><div class="stars">★★★★★</div><p>“A luxurious experience with professional service and beautiful results.”</p><small>Client review highlight</small></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“The team understood the look perfectly and made the experience comfortable.”</p><small>Client review highlight</small></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“A trusted destination for beauty, makeup and styling in Karnal.”</p><small>Client review highlight</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="kicker">Your next look starts here</div>
+        <h2>Ready for your Kerstin experience?</h2>
+        <p>Call the salon to discuss your service, occasion or appointment.</p>
+        <a class="btn" style="background:#211c1b;color:#fff" href="tel:+919289377777">Call +91 92893 77777</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><h3>Kerstin Professional</h3><p>Hair • Beauty • Makeup • Nails • Spa • Academy</p></div>
+      <div><h3>Visit</h3><p>SCO 6, Opposite Dayal Tower<br>Kunjpura Road, Karnal, Haryana 132001</p></div>
+      <div><h3>Contact</h3><a href="tel:+919289377777">+91 92893 77777</a><a href="https://maps.google.com/?q=Kerstin+Professional+Karnal" target="_blank">Get Directions ↗</a><a href="#top">Back to top ↑</a></div>
+    </div>
+    <div class="container bottom"><span>© 2026 Kerstin Professional. Demo website concept.</span><span>Designed for a premium salon experience.</span></div>
+  </footer>
+</body>
+</html>
